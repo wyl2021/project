@@ -1,0 +1,245 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "name": "企业官网重构",
+      "manager": "李明",
+      "managerAvatar": null,
+      "progress": 85,
+      "deadline": "2023-12-15",
+      "status": "in-progress",
+      "description": "对企业官网进行全面重构，提升用户体验和响应速度",
+      "team": ["李明", "张华", "王芳"],
+      "tasks": 24,
+      "completedTasks": 20,
+      "budget": 150000,
+      "spent": 120000,
+      "startDate": "2023-10-01"
+    },
+    {
+      "id": 2,
+      "name": "移动端App开发",
+      "manager": "张华",
+      "managerAvatar": null,
+      "progress": 60,
+      "deadline": "2024-01-20",
+      "status": "in-progress",
+      "description": "开发企业级移动端应用，实现核心业务功能",
+      "team": ["张华", "刘伟", "赵敏"],
+      "tasks": 36,
+      "completedTasks": 22,
+      "budget": 300000,
+      "spent": 180000,
+      "startDate": "2023-09-15"
+    },
+    {
+      "id": 3,
+      "name": "数据分析平台搭建",
+      "manager": "王芳",
+      "managerAvatar": null,
+      "progress": 100,
+      "deadline": "2023-11-30",
+      "status": "completed",
+      "description": "搭建企业数据分析平台，整合各业务系统数据",
+      "team": ["王芳", "陈明", "李娜"],
+      "tasks": 18,
+      "completedTasks": 18,
+      "budget": 120000,
+      "spent": 115000,
+      "startDate": "2023-09-01"
+    },
+    {
+      "id": 4,
+      "name": "CRM系统升级",
+      "manager": "刘伟",
+      "managerAvatar": null,
+      "progress": 45,
+      "deadline": "2023-12-30",
+      "status": "in-progress",
+      "description": "升级现有CRM系统，增加客户管理新功能",
+      "team": ["刘伟", "王芳", "张强"],
+      "tasks": 32,
+      "completedTasks": 14,
+      "budget": 200000,
+      "spent": 85000,
+      "startDate": "2023-10-15"
+    },
+    {
+      "id": 5,
+      "name": "产品手册编写",
+      "manager": "赵敏",
+      "managerAvatar": null,
+      "progress": 90,
+      "deadline": "2023-12-10",
+      "status": "in-progress",
+      "description": "编写新产品系列的用户手册和帮助文档",
+      "team": ["赵敏", "李娜", "陈明"],
+      "tasks": 12,
+      "completedTasks": 11,
+      "budget": 50000,
+      "spent": 45000,
+      "startDate": "2023-11-01"
+    },
+    {
+      "id": 6,
+      "name": "市场推广活动",
+      "manager": "陈明",
+      "managerAvatar": null,
+      "progress": 30,
+      "deadline": "2024-01-15",
+      "status": "in-progress",
+      "description": "策划并执行新产品的市场推广活动",
+      "team": ["陈明", "赵敏", "李娜"],
+      "tasks": 20,
+      "completedTasks": 6,
+      "budget": 80000,
+      "spent": 25000,
+      "startDate": "2023-12-01"
+    },
+    {
+      "id": 7,
+      "name": "服务器升级",
+      "manager": "张强",
+      "managerAvatar": null,
+      "progress": 100,
+      "deadline": "2023-11-15",
+      "status": "completed",
+      "description": "升级企业服务器集群，提升系统性能和安全性",
+      "team": ["张强", "刘伟", "张华"],
+      "tasks": 10,
+      "completedTasks": 10,
+      "budget": 100000,
+      "spent": 95000,
+      "startDate": "2023-10-20"
+    },
+    {
+      "id": 8,
+      "name": "员工培训计划",
+      "manager": "李娜",
+      "managerAvatar": null,
+      "progress": 75,
+      "deadline": "2023-12-25",
+      "status": "in-progress",
+      "description": "制定并实施新员工入职培训和现有员工技能提升计划",
+      "team": ["李娜", "李明", "王芳"],
+      "tasks": 15,
+      "completedTasks": 11,
+      "budget": 30000,
+      "spent": 22000,
+      "startDate": "2023-11-15"
+    },
+    {
+      "id": 9,
+      "name": "供应链优化",
+      "manager": "刘伟",
+      "managerAvatar": null,
+      "progress": 20,
+      "deadline": "2024-02-28",
+      "status": "in-progress",
+      "description": "优化企业供应链流程，降低成本并提高效率",
+      "team": ["刘伟", "陈明", "张强"],
+      "tasks": 25,
+      "completedTasks": 5,
+      "budget": 150000,
+      "spent": 30000,
+      "startDate": "2023-12-05"
+    },
+    {
+      "id": 10,
+      "name": "财务系统整合",
+      "manager": "张华",
+      "managerAvatar": null,
+      "progress": 100,
+      "deadline": "2023-10-31",
+      "status": "completed",
+      "description": "整合企业各部门财务系统，实现数据统一管理",
+      "team": ["张华", "赵敏", "李娜"],
+      "tasks": 16,
+      "completedTasks": 16,
+      "budget": 90000,
+      "spent": 88000,
+      "startDate": "2023-09-10"
+    },
+    {
+      "id": 11,
+      "name": "客户满意度调查",
+      "manager": "王芳",
+      "managerAvatar": null,
+      "progress": 15,
+      "deadline": "2024-01-10",
+      "status": "delayed",
+      "description": "设计并实施客户满意度调查，收集反馈并提出改进方案",
+      "team": ["王芳", "李娜", "陈明"],
+      "tasks": 12,
+      "completedTasks": 2,
+      "budget": 40000,
+      "spent": 10000,
+      "startDate": "2023-11-20"
+    },
+    {
+      "id": 12,
+      "name": "新产品研发",
+      "manager": "李明",
+      "managerAvatar": null,
+      "progress": 40,
+      "deadline": "2024-03-31",
+      "status": "delayed",
+      "description": "研发新一代产品，满足市场需求和技术发展趋势",
+      "team": ["李明", "张华", "刘伟"],
+      "tasks": 40,
+      "completedTasks": 16,
+      "budget": 500000,
+      "spent": 200000,
+      "startDate": "2023-09-01"
+    }
+  ],
+  "team": [
+    { "id": 1, "name": "李明", "role": "项目经理", "avatar": null, "projects": 3, "workload": 85 },
+    { "id": 2, "name": "张华", "role": "高级开发", "avatar": null, "projects": 4, "workload": 92 },
+    { "id": 3, "name": "王芳", "role": "UI设计师", "avatar": null, "projects": 2, "workload": 68 },
+    { "id": 4, "name": "刘伟", "role": "产品经理", "avatar": null, "projects": 3, "workload": 75 },
+    { "id": 5, "name": "赵敏", "role": "测试工程师", "avatar": null, "projects": 5, "workload": 90 },
+    { "id": 6, "name": "陈明", "role": "数据分析师", "avatar": null, "projects": 2, "workload": 60 },
+    { "id": 7, "name": "李娜", "role": "内容策划", "avatar": null, "projects": 3, "workload": 72 },
+    { "id": 8, "name": "张强", "role": "系统架构师", "avatar": null, "projects": 2, "workload": 78 }
+  ],
+  "chartData": {
+    "progressTrend": {
+      "labels": ["周一", "周二", "周三", "周四", "周五", "周六", "周日"],
+      "datasets": [
+        {
+          "label": "本周完成",
+          "data": [12, 19, 15, 22, 18, 25, 28],
+          "borderColor": "#3B82F6",
+          "backgroundColor": "rgba(59, 130, 246, 0.1)",
+          "tension": 0.4,
+          "fill": true
+        },
+        {
+          "label": "上周完成",
+          "data": [10, 15, 13, 18, 16, 20, 22],
+          "borderColor": "#94A3B8",
+          "backgroundColor": "rgba(148, 163, 184, 0.1)",
+          "tension": 0.4,
+          "fill": true
+        }
+      ]
+    },
+    "projectStatus": {
+      "labels": ["进行中", "已完成", "延期", "计划中"],
+      "datasets": [
+        {
+          "data": [7, 5, 2, 3],
+          "backgroundColor": [
+            "#F59E0B",
+            "#10B981",
+            "#EF4444",
+            "#6366F1"
+          ],
+          "borderWidth": 0,
+          "hoverOffset": 10
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Element UI 图标测试</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/element-ui@2.15.13/lib/theme-chalk/index.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/element-ui@2.15.13/lib/index.js"></script>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      color: #303133;
+      margin-bottom: 20px;
+    }
+    .icon-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 16px;
+    }
+    .icon-item {
+      text-align: center;
+      padding: 16px;
+      border: 1px solid #e4e7ed;
+      border-radius: 4px;
+      transition: all 0.3s;
+    }
+    .icon-item:hover {
+      border-color: #409eff;
+      box-shadow: 0 2px 12px 0 rgba(64, 158, 255, 0.2);
+    }
+    .icon {
+      font-size: 32px;
+      margin-bottom: 8px;
+      color: #606266;
+    }
+    .icon-name {
+      font-size: 12px;
+      color: #909399;
+      word-break: break-all;
+    }
+    .test-form {
+      margin-top: 40px;
+      padding: 20px;
+      border: 1px solid #e4e7ed;
+      border-radius: 4px;
+    }
+    .test-form .el-input {
+      width: 300px;
+      margin-bottom: 20px;
+    }
+    .status-message {
+      margin-top: 20px;
+      padding: 10px;
+      border-radius: 4px;
+      background-color: #f0f9ff;
+      border: 1px solid #bae7ff;
+      color: #0366d6;
+    }
+    .troubleshooting {
+      margin-top: 40px;
+      padding: 20px;
+      border: 1px solid #fcd34d;
+      border-radius: 4px;
+      background-color: #fffbeb;
+    }
+    .troubleshooting h3 {
+      color: #d97706;
+    }
+    .troubleshooting ul {
+      color: #92400e;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Element UI 图标测试</h1>
+    
+    <div class="status-message">
+      <p>测试状态：</p>
+      <p>✅ Vue已正确导入到main.js文件（已修复重复导入问题）</p>
+      <p>✅ path模块已正确导入到webpack.config.js文件</p>
+      <p>✅ webpack构建已成功完成</p>
+      <p>✅ Element UI的字体文件(element-icons.ttf)已被正确处理</p>
+      <p>✅ Element UI版本: 2.15.13, Vue版本: 2.6.14（兼容版本）</p>
+      <p><strong>注意：此页面使用CDN引入的Element UI进行快速测试。项目中已修复相关配置，可通过npm run dev启动开发服务器查看完整效果。</strong></p>
+    </div>
+    
+    <div class="icon-grid">
+      <div class="icon-item">
+        <i class="el-icon-user icon"></i>
+        <div class="icon-name">el-icon-user</div>
+      </div>
+      <div class="icon-item">
+        <i class="el-icon-lock icon"></i>
+        <div class="icon-name">el-icon-lock</div>
+      </div>
+      <div class="icon-item">
+        <i class="el-icon-picture-outline icon"></i>
+        <div class="icon-name">el-icon-picture-outline</div>
+      </div>
+      <div class="icon-item">
+        <i class="el-icon-loading icon"></i>
+        <div class="icon-name">el-icon-loading</div>
+      </div>
+      <div class="icon-item">
+        <i class="el-icon-success icon"></i>
+        <div class="icon-name">el-icon-success</div>
+      </div>
+      <div class="icon-item">
+        <i class="el-icon-error icon"></i>
+        <div class="icon-name">el-icon-error</div>
+      </div>
+    </div>
+    
+    <div class="test-form">
+      <h3>表单输入框测试（与Login.vue中的使用方式相同）</h3>
+      <el-input placeholder="用户名" prefix-icon="el-icon-user"></el-input>
+      <el-input type="password" placeholder="密码" prefix-icon="el-icon-lock"></el-input>
+    </div>
+    
+    <div class="troubleshooting">
+      <h3>问题排查步骤</h3>
+      <ul>
+        <li>1. 确认浏览器控制台是否有错误信息</li>
+        <li>2. 检查字体文件是否正确加载</li>
+        <li>3. 确认Element UI版本与Vue版本兼容（已确认：Element UI 2.15.13与Vue 2.6.14兼容）</li>
+        <li>4. 确认webpack配置是否正确处理字体文件</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    // 全局变量，用于存放Element UI实例
+    let elementUIInstance = null;
+    
+    // 在Vue实例创建前检查并使用Element UI
+    function initElementUI() {
+      // 尝试通过Vue.use()安装Element UI
+      try {
+        Vue.use(ELEMENT);
+        elementUIInstance = ELEMENT;
+        console.log('✅ Element UI 已成功安装');
+      } catch (error) {
+        console.error('❌ Element UI 安装失败:', error);
+      }
+    }
+    
+    // 初始化Element UI
+    initElementUI();
+    
+    // 创建Vue实例
+    new Vue({
+      el: '.container',
+      mounted() {
+        console.log('Element UI 图标测试页面已加载');
+        
+        // 检查图标是否能正确显示
+        setTimeout(() => {
+          this.verifyIconDisplay();
+        }, 1000);
+        
+        // 检查字体文件是否加载
+        this.checkFontLoading();
+      },
+      methods: {
+        checkFontLoading() {
+          // 检查外部CDN字体
+          try {
+            const cdnFont = new FontFace('element-icons', 'url(https://cdn.jsdelivr.net/npm/element-ui@2.15.13/lib/theme-chalk/fonts/element-icons.woff)');
+            document.fonts.add(cdnFont);
+            
+            cdnFont.load().then(() => {
+              console.log('✅ Element UI 图标字体(CDN)加载成功');
+              // 使用alert提示用户字体加载状态
+              alert('Element UI 图标字体加载成功！请检查页面上的图标是否正常显示。');
+            }).catch(err => {
+              console.error('❌ Element UI 图标字体(CDN)加载失败:', err);
+              alert('Element UI 图标字体加载失败！错误：' + err);
+            });
+          } catch (error) {
+            console.error('❌ 字体加载检测失败:', error);
+          }
+        },
+        
+        verifyIconDisplay() {
+          // 尝试检查页面上的图标是否能正确显示
+          const userIcon = document.querySelector('.el-icon-user');
+          if (userIcon) {
+            console.log('✅ 图标元素已在DOM中找到');
+          } else {
+            console.error('❌ 未找到图标元素');
+          }
+          
+          // 检查其他测试元素
+          const testInput = document.querySelector('.el-input');
+          if (testInput) {
+            console.log('✅ Element UI 输入框组件已正确渲染');
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

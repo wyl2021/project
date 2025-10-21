@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录 - 项目进度统计系统</title>
+    <!-- 引入外部资源 -->
+    <!-- <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <!-- 自定义Tailwind配置 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#10B981',
+                        warning: '#F59E0B',
+                        danger: '#EF4444',
+                        info: '#6366F1',
+                        dark: '#1E293B',
+                        light: '#F8FAFC'
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <!-- 自定义工具类 -->
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .card-shadow {
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            }
+            .gradient-bg {
+                background: linear-gradient(135deg, #3B82F6 0%, #6366F1 100%);
+            }
+        }
+    </style>
+    <!-- 引入自定义样式 -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="font-inter bg-gray-50 min-h-screen">
+    <div class="flex items-center justify-center min-h-screen p-4">
+        <div class="w-full max-w-md">
+            <div class="bg-white rounded-2xl card-shadow p-8">
+                <div class="text-center mb-8">
+                    <div class="flex justify-center mb-4">
+                        <div class="gradient-bg w-16 h-16 rounded-xl flex items-center justify-center">
+                            <i class="fa fa-bar-chart text-white text-3xl"></i>
+                        </div>
+                    </div>
+                    <h2 class="text-2xl font-bold text-dark">登录系统</h2>
+                    <p class="text-gray-500 mt-2">请输入您的账号和密码</p>
+                </div>
+
+                <form id="loginForm" class="space-y-4">
+                    <div>
+                        <label for="username" class="block text-sm font-medium text-gray-700 mb-1">用户名</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i class="fa fa-user text-gray-400"></i>
+                            </div>
+                            <input type="text" id="username" name="username"
+                                class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all"
+                                placeholder="请输入用户名" required>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="password" class="block text-sm font-medium text-gray-700 mb-1">密码</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i class="fa fa-lock text-gray-400"></i>
+                            </div>
+                            <input type="password" id="password" name="password"
+                                class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all"
+                                placeholder="请输入密码" required>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <input type="checkbox" id="rememberMe" name="rememberMe"
+                                class="h-4 w-4 text-primary border-gray-300 rounded focus:ring-primary">
+                            <label for="rememberMe" class="ml-2 block text-sm text-gray-700">记住我</label>
+                        </div>
+                        <a href="#" class="text-sm text-primary hover:text-primary/80 transition-colors">忘记密码?</a>
+                    </div>
+
+                    <button type="submit"
+                        class="w-full bg-primary hover:bg-primary/90 text-white font-medium py-2 px-4 rounded-lg transition-colors shadow-md hover:shadow-lg">
+                        登录
+                    </button>
+                </form>
+
+                <!-- 错误信息区域 -->
+                <div id="loginError" class="mt-4 hidden text-center text-danger text-sm p-3 bg-red-50 rounded-lg"></div>
+
+                <div class="mt-6 text-center text-gray-500 text-sm">
+                    <p>系统版本 1.0.0</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 引入JavaScript - 确保config.js首先加载 -->
+    <script src="js/config.js" type="module"></script>
+    <script src="js/utils.js" type="module"></script>
+    <script src="js/api-service.js" type="module"></script>
+    <script src="js/auth.js" type="module"></script>
+</body>
+
+</html>

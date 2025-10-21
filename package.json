@@ -1,0 +1,38 @@
+{
+  "name": "ak_project",
+  "version": "1.0.0",
+  "description": "项目管理系统 - Vue 2 + Element UI",
+  "private": true,
+  "scripts": {
+    "dev": "webpack-dev-server --mode development --port 8000",
+    "build": "webpack --mode production",
+    "serve": "http-server dist -p 8000"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "echarts": "^5.4.3",
+    "element-ui": "^2.15.13",
+    "vue": "^2.6.14",
+    "vue-echarts": "^4.1.0",
+    "vue-router": "^3.6.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.19.3",
+    "@babel/preset-env": "^7.19.3",
+    "babel-loader": "^8.2.5",
+    "css-loader": "^6.7.1",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "http-server": "^14.1.1",
+    "sass": "^1.93.2",
+    "sass-loader": "^16.0.5",
+    "style-loader": "^3.3.1",
+    "svg-sprite-loader": "^6.0.11",
+    "url-loader": "^4.1.1",
+    "vue-loader": "^15.10.1",
+    "vue-template-compiler": "^2.6.14",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.11.1"
+  }
+}
