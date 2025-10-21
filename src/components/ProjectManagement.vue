@@ -101,7 +101,6 @@
             </div>
           </div>
           <div class="detail-row">
-            // 在项目详情区域的团队成员选择器
             <div class="detail-item full-width">
               <label>团队成员：</label>
               <el-select v-model="selectedProject.teamMembers" multiple placeholder="无团队成员" style="width: 100%"
@@ -109,8 +108,6 @@
                 <el-option v-for="user in users" :key="`detail-${user.id}`" :label="user.name" :value="user.name" />
               </el-select>
             </div>
-
-            // 在添加/编辑表单的团队成员选择器
             <el-form-item label="团队成员" prop="team">
               <el-select v-model="projectForm.teamMembers" multiple placeholder="请选择团队成员" style="width: 100%">
                 <el-option v-for="user in users" :key="`form-team-${user.id}`" :label="user.name" :value="user.id" />
@@ -119,8 +116,6 @@
                 注：选择负责人后会自动添加到团队成员中
               </div>
             </el-form-item>
-
-            // 在负责人选择器
             <el-form-item label="项目负责人" prop="manager.id">
               <el-select v-model="projectForm.manager.id" placeholder="请选择负责人">
                 <el-option v-for="user in users" :key="`form-manager-${user.id}`" :label="user.name" :value="user.id" />
@@ -380,7 +375,7 @@ export default {
     viewProject(project) {
       // 深拷贝项目数据
       const projectCopy = { ...project };
-    
+
       // 如果团队成员是对象数组，直接提取name属性
       if (projectCopy.teamMembers && Array.isArray(projectCopy.teamMembers)) {
         projectCopy.teamMembers = projectCopy.teamMembers.map(member => {
@@ -393,17 +388,17 @@ export default {
             // 先从用户列表中查找
             const user = this.users.find(u => u.id === member);
             if (user) return user.name;
-    
+
             // 如果用户列表中找不到，从团队成员列表中查找
             const foundMember = this.teamMembers.find(m => m.id === member);
             if (foundMember) return foundMember.name;
-    
+
             // 如果都找不到，返回原始值
             return member;
           }
         });
       }
-    
+
       this.selectedProject = projectCopy;
       this.showProjectDetail = true;
     },
@@ -485,8 +480,9 @@ export default {
               // 确保manager是正确的格式
               manager: this.projectForm.manager.id ? { id: this.projectForm.manager.id } : {}
             };
-
+            console.log('提交项目表单数据:', submitData, this.projectForm)
             if (this.editingProject) {
+
               // 编辑项目
               await this.$api.updateProject(this.editingProject.id, submitData)
               this.$message.success('项目更新成功')

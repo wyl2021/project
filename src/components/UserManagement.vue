@@ -300,9 +300,9 @@ export default {
     // 处理头像选择
     handleAvatarChange(file) {
       // 创建FormData对象
+
       const formData = new FormData();
       formData.append('file', file.raw);
-
       // 显示上传中状态
       const loading = this.$loading({
         lock: true,
@@ -330,9 +330,11 @@ export default {
       }
 
       // 使用api-service方法
-      this.$api.uploadUserAvatar(userId, file.raw).then(response => {
+      this.$api.uploadUserAvatar(this.isEdit ? userId : null, file.raw).then(response => {
         // 处理响应数据
-        this.formData.avatar = response.data?.avatar || response.avatarUrl;
+        // this.formData.avatar = file.raw
+        this.formData.avatar = response.data?.avatarUrl || response.data?.avatar || '';
+
         this.$message.success('头像上传成功');
       }).catch(error => {
         console.error('头像上传失败:', error);
@@ -368,13 +370,13 @@ export default {
               delete requestData.password
             }
             console.log('提交数据2:', requestData, this.isEdit)
-            // if (this.isEdit) {
-            //   // 编辑用户 - 使用PUT /users/{userId}格式
-            //   response = await this.$api.updateUser(this.formData.id, requestData)
-            // } else {
-            //   // 新增用户
-            //   response = await this.$api.createUser(requestData)
-            // }
+            if (this.isEdit) {
+              // 编辑用户 - 使用PUT /users/{userId}格式
+              response = await this.$api.updateUser(this.formData.id, requestData)
+            } else {
+              // 新增用户
+              response = await this.$api.createUser(requestData)
+            }
 
             this.dialogVisible = false
             // 重新加载用户列表

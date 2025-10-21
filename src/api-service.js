@@ -595,7 +595,11 @@ class ApiService {
    */
   async createProject(projectData) {
     try {
-      return await this._fetch('/projects', 'POST', projectData)
+      const newProject = {
+        ...projectData,
+        managerId: projectData.manager.id,
+      }
+      return await this._fetch('/projects', 'POST', newProject)
     } catch (error) {
       console.error('创建项目失败:', error)
       throw error
@@ -607,7 +611,11 @@ class ApiService {
    */
   async updateProject(id, projectData) {
     try {
-      return await this._fetch(`/projects/${id}`, 'PUT', projectData)
+      const newProject = {
+        ...projectData,
+        managerId: projectData.manager.id,
+      }
+      return await this._fetch(`/projects/${id}`, 'PUT', newProject)
     } catch (error) {
       console.error('更新项目失败:', error)
       throw error
@@ -683,7 +691,8 @@ class ApiService {
         name: userData.name.trim(),
         email: userData.email.trim(),
         role: userData.role || 'user',
-        department: userData.department
+        department: userData.department,
+        avatar: userData.avatar || ''
       }
 
       const response = await this._fetch('/users', 'POST', requestData)
@@ -714,7 +723,8 @@ class ApiService {
         email: userData.email.trim(),
         role: userData.role || 'user',
         username: userData.username || '',
-        department: userData.department // 增加department参数
+        department: userData.department || '', // 增加department参数
+        avatar: userData.avatar || ''
       }
 
       // 如果提供了密码，则更新密码
