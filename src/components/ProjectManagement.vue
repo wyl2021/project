@@ -173,7 +173,6 @@
         <el-form-item label="项目描述" prop="description">
           <el-input v-model="projectForm.description" type="textarea" placeholder="请输入项目描述" :rows="3" />
         </el-form-item>
-
         <!-- <el-form-item label="预算" prop="budget">
           <el-input-number v-model="projectForm.budget" :min="0" placeholder="请输入项目预算" />
         </el-form-item> -->
